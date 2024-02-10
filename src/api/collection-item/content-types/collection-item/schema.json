@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collection_items",
+  "info": {
+    "singularName": "collection-item",
+    "pluralName": "collection-items",
+    "displayName": "Collection Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::item.item",
+      "inversedBy": "collectionItems"
+    },
+    "outOfRotation": {
+      "type": "boolean"
+    },
+    "claim": {
+      "type": "enumeration",
+      "enum": [
+        "Cash Shop",
+        "Battle Pass",
+        "Monster Drop",
+        "Boss Drop",
+        "World Boss Drop",
+        "Uber Boss Drop",
+        "Zone Drop",
+        "Challenge Reward",
+        "Promotional",
+        "Vendor",
+        "Season Journey Reward",
+        "Quest Reward",
+        "Fields of Hatred",
+        "Twitch Drop"
+      ]
+    },
+    "claimDescription": {
+      "type": "text"
+    },
+    "claimZone": {
+      "type": "enumeration",
+      "enum": [
+        "Scosglen",
+        "Dry Steppes",
+        "Fractured Peaks",
+        "Hawezar",
+        "Kehjistan",
+        "Sanctuary",
+        "Nightmare Dungeons"
+      ]
+    },
+    "claimMonster": {
+      "type": "enumeration",
+      "enum": [
+        "Treasure Goblins",
+        "Uber Lilith",
+        "Ashava",
+        "Wandering Death",
+        "Avarice",
+        "The Butcher",
+        "Echo of Varshan",
+        "Grigoire the Galvanic Saint",
+        "The Beast in the Ice",
+        "Duriel, King of Maggots",
+        "Lord Zir"
+      ]
+    },
+    "premium": {
+      "type": "boolean"
+    },
+    "promotional": {
+      "type": "boolean"
+    },
+    "season": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "collection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::collection.collection",
+      "inversedBy": "collectionItems"
+    }
+  }
+}

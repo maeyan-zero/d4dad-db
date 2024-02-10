@@ -1,0 +1,142 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "itemId": {
+      "type": "biginteger"
+    },
+    "magicType": {
+      "type": "enumeration",
+      "enum": [
+        "Common",
+        "Magic",
+        "Rare",
+        "Legendary",
+        "Unique"
+      ]
+    },
+    "itemType": {
+      "type": "enumeration",
+      "enum": [
+        "Axe",
+        "Dagger",
+        "Focus",
+        "Mace",
+        "Scythe",
+        "Shield",
+        "Sword",
+        "Totem",
+        "Wand",
+        "Two-Handed Axe",
+        "Bow",
+        "Crossbow",
+        "Two-Handed Mace",
+        "Polearm",
+        "Two-Handed Scythe",
+        "Staff",
+        "Two-Handed Sword",
+        "Amulet",
+        "Chest Armor",
+        "Gold",
+        "Back Trophy",
+        "Crafting Material",
+        "Currency",
+        "Boots",
+        "Summoning",
+        "Grand Cache",
+        "Gloves",
+        "Helm",
+        "Ring",
+        "Whisper Cache",
+        "Dungeon Cache",
+        "Quest Glyph",
+        "Crafted Cache",
+        "Quest Item",
+        "Lorebook",
+        "Area Item",
+        "Scroll",
+        "Nightmare Sigil",
+        "Consumable",
+        "Elixir",
+        "Gem",
+        "Potion",
+        "Healing Potion",
+        "Incense",
+        "Aspect",
+        "Journey Cache",
+        "Event Reward Cache",
+        "Event Material",
+        "Midwinter Cache",
+        "Horse Armor",
+        "Mount",
+        "Trophy",
+        "Treasure",
+        "Pants",
+        "Paragon Glyph",
+        "Ear",
+        "Quest Reward Cache",
+        "Crafting Recipe",
+        "Caged Heart",
+        "Malignant Invoker",
+        "Seasonal Consumable",
+        "Hunters' Acclaim Reward Cache",
+        "Tome",
+        "Gear Item",
+        "Seneschal Utility Module",
+        "Senechal Power Module",
+        "Body Marking",
+        "Awakened Cache"
+      ]
+    },
+    "transMog": {
+      "type": "boolean"
+    },
+    "usableByClass": {
+      "type": "customField",
+      "options": [
+        "Barbarian",
+        "Druid",
+        "Necromancer",
+        "Rogue",
+        "Sorceress"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "iconId": {
+      "type": "biginteger"
+    },
+    "collectionItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection-item.collection-item",
+      "mappedBy": "item"
+    }
+  }
+}
