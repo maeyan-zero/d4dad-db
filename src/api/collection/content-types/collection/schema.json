@@ -26,6 +26,14 @@
       "relation": "oneToMany",
       "target": "api::collection-item.collection-item",
       "mappedBy": "collection"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "Base Items",
+        "Trajas Wares"
+      ]
     }
   }
 }

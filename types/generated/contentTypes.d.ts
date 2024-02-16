@@ -744,6 +744,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'oneToMany',
       'api::collection-item.collection-item'
     >;
+    category: Attribute.Enumeration<['General', 'Base Items', 'Trajas Wares']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -774,9 +775,9 @@ export interface ApiCollectionItemCollectionItem extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    item: Attribute.Relation<
+    items: Attribute.Relation<
       'api::collection-item.collection-item',
-      'manyToOne',
+      'manyToMany',
       'api::item.item'
     >;
     outOfRotation: Attribute.Boolean;
@@ -950,9 +951,14 @@ export interface ApiItemItem extends Schema.CollectionType {
         ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorceress']
       >;
     iconId: Attribute.BigInteger;
-    collectionItems: Attribute.Relation<
+    itemImages: Attribute.Relation<
       'api::item.item',
       'oneToMany',
+      'api::item-image.item-image'
+    >;
+    collectionItems: Attribute.Relation<
+      'api::item.item',
+      'manyToMany',
       'api::collection-item.collection-item'
     >;
     createdAt: Attribute.DateTime;
@@ -961,6 +967,45 @@ export interface ApiItemItem extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::item.item', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::item.item', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiItemImageItemImage extends Schema.CollectionType {
+  collectionName: 'item_images';
+  info: {
+    singularName: 'item-image';
+    pluralName: 'item-images';
+    displayName: 'Item Image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    class: Attribute.Enumeration<
+      ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorceress']
+    >;
+    gender: Attribute.Enumeration<['Male', 'Female']>;
+    item: Attribute.Relation<
+      'api::item-image.item-image',
+      'manyToOne',
+      'api::item.item'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::item-image.item-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::item-image.item-image',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1007,6 +1052,7 @@ declare module '@strapi/types' {
       'api::collection.collection': ApiCollectionCollection;
       'api::collection-item.collection-item': ApiCollectionItemCollectionItem;
       'api::item.item': ApiItemItem;
+      'api::item-image.item-image': ApiItemImageItemImage;
       'api::meta.meta': ApiMetaMeta;
     }
   }

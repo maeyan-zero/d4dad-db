@@ -132,11 +132,17 @@
     "iconId": {
       "type": "biginteger"
     },
-    "collectionItems": {
+    "itemImages": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::collection-item.collection-item",
+      "target": "api::item-image.item-image",
       "mappedBy": "item"
+    },
+    "collectionItems": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection-item.collection-item",
+      "mappedBy": "items"
     }
   }
 }
