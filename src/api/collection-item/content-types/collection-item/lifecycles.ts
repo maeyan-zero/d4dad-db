@@ -28,6 +28,11 @@ export default {
     let collection = null;
     let item = null;
 
+    // when publishing, there are no other data points
+    if (!data.collection && !data.item) {
+      return;
+    }
+
     if (data.collection.connect.length) {
       collection = data.collection.connect[0]
       collection = await strapi.db.query('api::collection.collection').findOne({
