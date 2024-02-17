@@ -31,8 +31,8 @@
       "type": "enumeration",
       "enum": [
         "General",
-        "Base Items",
-        "Trajas Wares"
+        "Shop",
+        "Base"
       ]
     }
   }

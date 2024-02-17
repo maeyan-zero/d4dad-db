@@ -1,4 +1,4 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type {Attribute, Schema} from '@strapi/strapi';
 
 export interface AdminPermission extends Schema.CollectionType {
   collectionName: 'admin_permissions';
@@ -744,7 +744,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'oneToMany',
       'api::collection-item.collection-item'
     >;
-    category: Attribute.Enumeration<['General', 'Base Items', 'Trajas Wares']>;
+    category: Attribute.Enumeration<['General', 'Shop', 'Base']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
