@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "item_images",
+  "info": {
+    "singularName": "item-image",
+    "pluralName": "item-images",
+    "displayName": "Item Image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "class": {
+      "type": "enumeration",
+      "enum": [
+        "Barbarian",
+        "Druid",
+        "Necromancer",
+        "Rogue",
+        "Sorceress"
+      ]
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::item.item",
+      "inversedBy": "itemImages"
+    }
+  }
+}
