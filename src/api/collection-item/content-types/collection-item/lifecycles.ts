@@ -29,7 +29,7 @@ export default {
     let item = null;
 
     // when publishing, there are no other data points
-    if (!data.collection && !data.item) {
+    if (!data.collection && !data.items) {
       return;
     }
 
@@ -40,8 +40,8 @@ export default {
       });
     }
 
-    if (data.item.connect.length) {
-      item = data.item.connect[0]
+    if (data.items.connect.length) {
+      item = data.items.connect[0]
       item = await strapi.db.query('api::item.item').findOne({
         where: { id: item.id }
       });
@@ -51,15 +51,15 @@ export default {
       let { id } = data;
       let existing = await strapi.query('api::collection-item.collection-item').findOne({
         where: { id: id },
-        populate: { collection: true, item: true }
+        populate: { collection: true, items: true }
       });
 
       if (collection === null && data.collection.disconnect.length === 0) {
         collection = existing.collection;
       }
 
-      if (item === null && data.item.disconnect.length === 0) {
-        item = existing.item;
+      if (item === null && data.items.disconnect.length === 0) {
+        item = existing.items[0] ?? null;
       }
     }
 
