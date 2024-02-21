@@ -11,8 +11,8 @@ export default {
       });
     }
 
-    if (data.item.connect.length) {
-      item = data.item.connect[0]
+    if (data.items.connect.length) {
+      item = data.items.connect[0]
       item = await strapi.db.query('api::item.item').findOne({
         where: { id: item.id }
       });
