@@ -34,6 +34,12 @@
         "Shop",
         "Base"
       ]
+    },
+    "storeProductId": {
+      "type": "biginteger"
+    },
+    "platinum": {
+      "type": "integer"
     }
   }
 }
