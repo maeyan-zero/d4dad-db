@@ -32,89 +32,6 @@
     "itemId": {
       "type": "biginteger"
     },
-    "magicType": {
-      "type": "enumeration",
-      "enum": [
-        "Common",
-        "Magic",
-        "Rare",
-        "Legendary",
-        "Unique"
-      ]
-    },
-    "itemType": {
-      "type": "enumeration",
-      "enum": [
-        "Axe",
-        "Dagger",
-        "Focus",
-        "Mace",
-        "Scythe",
-        "Shield",
-        "Sword",
-        "Totem",
-        "Wand",
-        "Two-Handed Axe",
-        "Bow",
-        "Crossbow",
-        "Two-Handed Mace",
-        "Polearm",
-        "Two-Handed Scythe",
-        "Staff",
-        "Two-Handed Sword",
-        "Amulet",
-        "Chest Armor",
-        "Gold",
-        "Back Trophy",
-        "Crafting Material",
-        "Currency",
-        "Boots",
-        "Summoning",
-        "Grand Cache",
-        "Gloves",
-        "Helm",
-        "Ring",
-        "Whisper Cache",
-        "Dungeon Cache",
-        "Quest Glyph",
-        "Crafted Cache",
-        "Quest Item",
-        "Lorebook",
-        "Area Item",
-        "Scroll",
-        "Nightmare Sigil",
-        "Consumable",
-        "Elixir",
-        "Gem",
-        "Potion",
-        "Healing Potion",
-        "Incense",
-        "Aspect",
-        "Journey Cache",
-        "Event Reward Cache",
-        "Event Material",
-        "Midwinter Cache",
-        "Horse Armor",
-        "Mount",
-        "Trophy",
-        "Treasure",
-        "Pants",
-        "Paragon Glyph",
-        "Ear",
-        "Quest Reward Cache",
-        "Crafting Recipe",
-        "Caged Heart",
-        "Malignant Invoker",
-        "Seasonal Consumable",
-        "Hunters' Acclaim Reward Cache",
-        "Tome",
-        "Gear Item",
-        "Seneschal Utility Module",
-        "Senechal Power Module",
-        "Body Marking",
-        "Awakened Cache"
-      ]
-    },
     "transMog": {
       "type": "boolean"
     },
@@ -125,7 +42,7 @@
         "Druid",
         "Necromancer",
         "Rogue",
-        "Sorceress"
+        "Sorcerer"
       ],
       "customField": "plugin::multi-select.multi-select"
     },
@@ -143,6 +60,12 @@
       "relation": "manyToMany",
       "target": "api::collection-item.collection-item",
       "mappedBy": "items"
+    },
+    "itemType": {
+      "type": "string"
+    },
+    "magicType": {
+      "type": "string"
     }
   }
 }

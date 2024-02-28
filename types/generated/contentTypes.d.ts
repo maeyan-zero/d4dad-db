@@ -869,86 +869,11 @@ export interface ApiItemItem extends Schema.CollectionType {
     description: Attribute.Text;
     icon: Attribute.Media;
     itemId: Attribute.BigInteger;
-    magicType: Attribute.Enumeration<
-      ['Common', 'Magic', 'Rare', 'Legendary', 'Unique']
-    >;
-    itemType: Attribute.Enumeration<
-      [
-        'Axe',
-        'Dagger',
-        'Focus',
-        'Mace',
-        'Scythe',
-        'Shield',
-        'Sword',
-        'Totem',
-        'Wand',
-        'Two-Handed Axe',
-        'Bow',
-        'Crossbow',
-        'Two-Handed Mace',
-        'Polearm',
-        'Two-Handed Scythe',
-        'Staff',
-        'Two-Handed Sword',
-        'Amulet',
-        'Chest Armor',
-        'Gold',
-        'Back Trophy',
-        'Crafting Material',
-        'Currency',
-        'Boots',
-        'Summoning',
-        'Grand Cache',
-        'Gloves',
-        'Helm',
-        'Ring',
-        'Whisper Cache',
-        'Dungeon Cache',
-        'Quest Glyph',
-        'Crafted Cache',
-        'Quest Item',
-        'Lorebook',
-        'Area Item',
-        'Scroll',
-        'Nightmare Sigil',
-        'Consumable',
-        'Elixir',
-        'Gem',
-        'Potion',
-        'Healing Potion',
-        'Incense',
-        'Aspect',
-        'Journey Cache',
-        'Event Reward Cache',
-        'Event Material',
-        'Midwinter Cache',
-        'Horse Armor',
-        'Mount',
-        'Trophy',
-        'Treasure',
-        'Pants',
-        'Paragon Glyph',
-        'Ear',
-        'Quest Reward Cache',
-        'Crafting Recipe',
-        'Caged Heart',
-        'Malignant Invoker',
-        'Seasonal Consumable',
-        "Hunters' Acclaim Reward Cache",
-        'Tome',
-        'Gear Item',
-        'Seneschal Utility Module',
-        'Senechal Power Module',
-        'Body Marking',
-        'Awakened Cache'
-      ]
-    >;
     transMog: Attribute.Boolean;
     usableByClass: Attribute.JSON &
       Attribute.CustomField<
         'plugin::multi-select.multi-select',
-        ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorceress']
+        ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorcerer']
       >;
     iconId: Attribute.BigInteger;
     itemImages: Attribute.Relation<
@@ -961,6 +886,8 @@ export interface ApiItemItem extends Schema.CollectionType {
       'manyToMany',
       'api::collection-item.collection-item'
     >;
+    itemType: Attribute.String;
+    magicType: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
