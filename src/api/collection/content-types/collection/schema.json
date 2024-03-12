@@ -32,7 +32,7 @@
       "enum": [
         "General",
         "Shop",
-        "Base"
+        "Promotional"
       ]
     },
     "itemId": {

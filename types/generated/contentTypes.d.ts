@@ -744,7 +744,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'oneToMany',
       'api::collection-item.collection-item'
     >;
-    category: Attribute.Enumeration<['General', 'Shop', 'Base']>;
+    category: Attribute.Enumeration<['General', 'Shop', 'Promotional']>;
     itemId: Attribute.BigInteger;
     platinum: Attribute.Integer;
     createdAt: Attribute.DateTime;
