@@ -798,7 +798,8 @@ export interface ApiCollectionItemCollectionItem extends Schema.CollectionType {
         'Season Journey Reward',
         'Quest Reward',
         'Fields of Hatred',
-        'Twitch Drop'
+        'Twitch Drop',
+        'World Drop'
       ]
     >;
     claimDescription: Attribute.Text;
