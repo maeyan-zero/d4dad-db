@@ -40,6 +40,18 @@
     },
     "platinum": {
       "type": "integer"
+    },
+    "subcollections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "subcollection"
+    },
+    "subcollection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::collection.collection",
+      "inversedBy": "subcollections"
     }
   }
 }
