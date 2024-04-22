@@ -66,6 +66,12 @@
     },
     "magicType": {
       "type": "string"
+    },
+    "transmogName": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
     }
   }
 }

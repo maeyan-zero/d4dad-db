@@ -32,7 +32,8 @@
       "enum": [
         "General",
         "Shop",
-        "Promotional"
+        "Promotional",
+        "Season"
       ]
     },
     "itemId": {
@@ -52,6 +53,17 @@
       "relation": "manyToOne",
       "target": "api::collection.collection",
       "inversedBy": "subcollections"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

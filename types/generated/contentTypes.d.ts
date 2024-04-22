@@ -744,7 +744,9 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'oneToMany',
       'api::collection-item.collection-item'
     >;
-    category: Attribute.Enumeration<['General', 'Shop', 'Promotional']>;
+    category: Attribute.Enumeration<
+      ['General', 'Shop', 'Promotional', 'Season']
+    >;
     itemId: Attribute.BigInteger;
     platinum: Attribute.Integer;
     subcollections: Attribute.Relation<
@@ -757,6 +759,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'manyToOne',
       'api::collection.collection'
     >;
+    icon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -902,6 +905,8 @@ export interface ApiItemItem extends Schema.CollectionType {
     >;
     itemType: Attribute.String;
     magicType: Attribute.String;
+    transmogName: Attribute.String;
+    series: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
