@@ -72,6 +72,15 @@
     },
     "series": {
       "type": "string"
+    },
+    "dropMinWorldTier": {
+      "type": "integer"
+    },
+    "dropMinLevel": {
+      "type": "integer"
+    },
+    "dropMaxLevel": {
+      "type": "integer"
     }
   }
 }

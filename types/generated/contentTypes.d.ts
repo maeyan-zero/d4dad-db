@@ -840,7 +840,9 @@ export interface ApiCollectionItemCollectionItem extends Schema.CollectionType {
         'Grigoire the Galvanic Saint',
         'The Beast in the Ice',
         'Duriel, King of Maggots',
-        'Lord Zir'
+        'Lord Zir',
+        '"Wrathful" Osgar Reede',
+        'Nine-Eyes'
       ]
     >;
     premium: Attribute.Boolean;
@@ -907,6 +909,9 @@ export interface ApiItemItem extends Schema.CollectionType {
     magicType: Attribute.String;
     transmogName: Attribute.String;
     series: Attribute.String;
+    dropMinWorldTier: Attribute.Integer;
+    dropMinLevel: Attribute.Integer;
+    dropMaxLevel: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
