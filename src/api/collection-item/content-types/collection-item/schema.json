@@ -91,6 +91,9 @@
       "relation": "manyToOne",
       "target": "api::collection.collection",
       "inversedBy": "collectionItems"
+    },
+    "unobtainable": {
+      "type": "boolean"
     }
   }
 }

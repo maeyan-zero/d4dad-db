@@ -33,7 +33,8 @@
         "General",
         "Shop",
         "Promotional",
-        "Season"
+        "Season",
+        "Challenge"
       ]
     },
     "itemId": {
